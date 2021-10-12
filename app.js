@@ -7,8 +7,8 @@ const cookieParser = require('cookie-parser')
 const expressValidator = require('express-validator')
 
 //import routes
-const userRoutes = require('./routes/users')
-
+const authRoutes = require('./routes/auth')
+const userRoutes = require('./routes/user')
 //app
 const app = express()
 
@@ -27,6 +27,7 @@ app.use(cookieParser())
 app.use(expressValidator())
 
 //routes middleware
+app.use('/api/v1',authRoutes)
 app.use('/api/v1',userRoutes)
 
 const port = process.env.PORT || 8000
