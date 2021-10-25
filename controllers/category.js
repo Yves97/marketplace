@@ -44,7 +44,6 @@ exports.update = (req,res) => {
         }
         res.json(data)
     })
-
 }
 
 
